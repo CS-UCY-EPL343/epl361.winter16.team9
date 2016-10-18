@@ -1,7 +1,7 @@
 
 /*Create database*/
-CREATE DATABASE  IF NOT EXISTS `helpine`;
-USE `helpine`;
+CREATE DATABASE  IF NOT EXISTS `helpline`;
+USE `helpline`;
 
 DROP TABLE IF EXISTS `ChatRecord`;
 DROP TABLE IF EXISTS `ChatSession`;

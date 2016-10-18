@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Implementation-Title: webapp
+Implementation-Version: 1.0
+Main-Class: com.team9.main.Main
+
