@@ -1,0 +1,28 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.gitignore
+.idea/compiler.xml
+.idea/copyright/
+.idea/epl361.winter16.team9.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+allProjects/webapp/build/dependency-cache/
+allProjects/webapp/build/resources/
+allProjects/webapp/build/tmp/compileJava/
+allProjects/webapp/libs/
+allProjects/webapp/src/main/resources/
+allProjects/webapp/src/test/

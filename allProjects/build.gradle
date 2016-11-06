@@ -18,6 +18,11 @@ subprojects{
 
         compile "com.sparkjava:spark-core:2.5" //add to build.gradle
 
+        // https://mvnrepository.com/artifact/com.sparkjava/spark-template-freemarker
+        compile group: 'com.sparkjava', name: 'spark-template-freemarker', version: '2.3'
+
+
+
 
     }
 
