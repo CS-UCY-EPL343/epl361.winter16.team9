@@ -1,1 +1,3 @@
-include ":webapp"
+include ":WebApp"
+include ":CMSLibrary"
+include ":HotlinePlatform"

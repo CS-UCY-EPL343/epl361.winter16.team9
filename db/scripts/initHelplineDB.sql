@@ -64,7 +64,7 @@ CREATE TABLE Statistics (
 	id int(11) NOT NULL AUTO_INCREMENT,
 	case_id varchar(16) NOT NULL,
 	time_created timestamp  DEFAULT CURRENT_TIMESTAMP,
-	time_finished timestamp DEFAULT 0,
+	time_finished DATETIME,
 	age int(11) NOT NULL,
 	gender tinyint(1) NOT NULL, 
 	city varchar(32) NOT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE ChatSession (
 	session_id varchar(16) NOT NULL,
 	case_id varchar(16),
 	time_opened timestamp  DEFAULT CURRENT_TIMESTAMP,
-	time_closed timestamp  DEFAULT 0,
+	time_closed DATETIME, 
 	CONSTRAINT fk_case_chatsession FOREIGN KEY(case_id) REFERENCES 	`Case`(case_id),
 	PRIMARY KEY (session_id)
 )ENGINE = InnoDB;

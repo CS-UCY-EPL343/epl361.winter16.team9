@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":HotlinePlatform:main" external.linked.project.path="$USER_HOME$/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/HotlinePlatform" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="allProjects" external.system.module.type="sourceSet" external.system.module.version="1.0" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+    <output url="file://$USER_HOME$/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/HotlinePlatform/build/classes/main" />
+    <exclude-output />
+    <content url="file://$USER_HOME$/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/HotlinePlatform/src/main">
+      <sourceFolder url="file://$USER_HOME$/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/HotlinePlatform/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/HotlinePlatform/src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.34" level="project" />
+    <orderEntry type="library" name="Gradle: com.sparkjava:spark-core:2.5" level="project" />
+    <orderEntry type="library" name="Gradle: com.sparkjava:spark-template-freemarker:2.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.13" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-server:9.3.6.v20151106" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-webapp:9.3.6.v20151106" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-server:9.3.6.v20151106" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-servlet:9.3.6.v20151106" level="project" />
+    <orderEntry type="library" name="Gradle: org.freemarker:freemarker:2.3.19" level="project" />
+    <orderEntry type="library" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-http:9.3.6.v20151106" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-io:9.3.6.v20151106" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-xml:9.3.6.v20151106" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-servlet:9.3.6.v20151106" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-common:9.3.6.v20151106" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-client:9.3.6.v20151106" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty.websocket:websocket-api:9.3.6.v20151106" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-util:9.3.6.v20151106" level="project" />
+    <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-security:9.3.6.v20151106" level="project" />
+    <orderEntry type="module" module-name="CMSLibrary_main" />
+  </component>
+</module>

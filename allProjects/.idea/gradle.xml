@@ -9,7 +9,9 @@
         <option name="modules">
           <set>
             <option value="$USER_HOME$/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects" />
-            <option value="$USER_HOME$/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/webapp" />
+            <option value="$USER_HOME$/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/CMSLibrary" />
+            <option value="$USER_HOME$/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/HotlinePlatform" />
+            <option value="$USER_HOME$/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/WebApp" />
           </set>
         </option>
       </GradleProjectSettings>

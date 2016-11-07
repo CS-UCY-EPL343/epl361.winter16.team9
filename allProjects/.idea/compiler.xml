@@ -19,8 +19,18 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="CMSLibrary_main" target="1.8" />
+      <module name="CMSLibrary_test" target="1.8" />
+      <module name="DBstorage_main" target="1.8" />
+      <module name="DBStorage_main" target="1.8" />
+      <module name="DBstorage_test" target="1.8" />
+      <module name="DBStorage_test" target="1.8" />
+      <module name="HotlinePlatform_main" target="1.8" />
+      <module name="HotlinePlatform_test" target="1.8" />
       <module name="webapp_main" target="1.8" />
+      <module name="WebApp_main" target="1.8" />
       <module name="webapp_test" target="1.8" />
+      <module name="WebApp_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
