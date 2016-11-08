@@ -2,6 +2,7 @@ package com.cmsl.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  * Created by zgeorg03 on 11/7/16.
@@ -36,5 +37,13 @@ public class DBConnection {
 
     public Connection getConnection() {
         return connection;
+    }
+
+    public void close(){
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            System.err.println("Failed to close connection");
+        }
     }
 }

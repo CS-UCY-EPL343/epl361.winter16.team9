@@ -41,7 +41,7 @@ project(':WebApp') {
         manifest {
             attributes 'Implementation-Title': archivesBaseName,
                     'Implementation-Version': version,
-                    'Main-Class': 'com.wa.main.Main'
+                    'Main-Class': 'com.wa.security.Main'
         }
         baseName = "WebApp"
         from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
@@ -62,7 +62,7 @@ project(':CMSLibrary') {
         manifest {
             attributes 'Implementation-Title': archivesBaseName,
                     'Implementation-Version': version,
-                    'Main-Class': 'com.cmsl.main.Main'
+                    'Main-Class': 'com.cmsl.security.Main'
         }
         baseName = "CMSLibrary"
         from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
@@ -83,7 +83,7 @@ project(':HotlinePlatform') {
         manifest {
             attributes 'Implementation-Title': archivesBaseName,
                     'Implementation-Version': version,
-                    'Main-Class': 'com.hp.main.Main'
+                    'Main-Class': 'com.hp.security.Main'
         }
         baseName = "HotlinePlatform"
         from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }

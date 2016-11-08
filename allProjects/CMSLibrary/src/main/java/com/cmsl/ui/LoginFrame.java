@@ -45,7 +45,25 @@ public class LoginFrame extends JFrame {
        this.setSize(width,height);
        this.pack();
 
-
    }
+
+    public void clearUsername(){txt_username.setText("");}
+    public void clearPassword(){txt_password.setText("");}
+
+    /**
+     * Get username
+     * @return
+     */
+   public String getUsername(){
+       return txt_username.getText().trim();
+   }
+
+    /**
+     * Get password
+     * @return
+     */
+    public String getPassword(){
+        return new String(txt_password.getPassword());
+    }
 
 }

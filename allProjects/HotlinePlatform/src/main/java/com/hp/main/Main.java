@@ -1,5 +1,6 @@
 package com.hp.main;
 
+import com.cmsl.db.DBConnection;
 import com.hp.ui.HotlineLoginFrame;
 import com.sun.javafx.event.EventQueue;
 
@@ -18,12 +19,18 @@ public class Main {
      */
     public static void main(String args[]) throws InvocationTargetException, InterruptedException {
 
+        try {
+            DBConnection connection = new DBConnection("localhost","hotline","team9","Epl361project!");
         SwingUtilities.invokeAndWait( () -> {
 
-            HotlineLoginFrame loginFrame = new HotlineLoginFrame(200,280);
+            HotlineLoginFrame loginFrame = new HotlineLoginFrame(200,280,connection);
             loginFrame.setVisible(true);
 
         });
+        } catch (Exception e) {
+            System.err.println("Failed to connect to Hotline Database");
+            return;
+        }
 
     }
 }
