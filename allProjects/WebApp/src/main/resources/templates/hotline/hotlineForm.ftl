@@ -23,12 +23,8 @@
             <div id="errorEmail" style="display:none" class="alert alert-danger" role="alert">Please enter email</div>
         </div>
         <div class="form-group">
-            <label for="password">Password</label>
-            <input name="password" type="password" class="form-control" id="password" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" id="exampleInputFile">
+            <label for="file">Upload File</label>
+            <input type="file" id="file">
             <p class="help-block">Example block-level help text here.</p>
         </div>
         <div class="checkbox">

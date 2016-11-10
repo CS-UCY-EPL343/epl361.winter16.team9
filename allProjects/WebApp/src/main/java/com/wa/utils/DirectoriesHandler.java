@@ -14,12 +14,15 @@ public class DirectoriesHandler {
 
     private final File hotlineDirectory;
     private final File hotlineLoggerDirectory;
+    private final File hotlineCasesDirectory;
 
     private final File helplineDirectory;
     private final File helplineLoggerDirectory;
+    private final File helplineCasesDirectory;
 
     private final File descriptionDirectory;
     private final File descriptionLoggerDirectory;
+    private final File descriptionCasesDirectory;
 
     public DirectoriesHandler(String location) throws Exception {
 
@@ -28,12 +31,15 @@ public class DirectoriesHandler {
 
         hotlineDirectory = constructDirectory(location+"hotline/");
         hotlineLoggerDirectory = constructDirectory(location+"hotline/log/");
+        hotlineCasesDirectory = constructDirectory(location+"hotline/cases/");
 
         helplineDirectory = constructDirectory(location+"helpline/");
         helplineLoggerDirectory = constructDirectory(location+"helpline/log/");
+        helplineCasesDirectory = constructDirectory(location+"helpline/cases/");
 
         descriptionDirectory = constructDirectory(location+"description/");
-        descriptionLoggerDirectory = constructDirectory(location+"description/log");
+        descriptionLoggerDirectory = constructDirectory(location+"description/log/");
+        descriptionCasesDirectory = constructDirectory(location+"description/cases/");
 
 
 
@@ -54,5 +60,9 @@ public class DirectoriesHandler {
             throw new Exception("Error");
         }
         return fp;
+    }
+
+    public File getHotlineCasesDirectory() {
+        return hotlineCasesDirectory;
     }
 }

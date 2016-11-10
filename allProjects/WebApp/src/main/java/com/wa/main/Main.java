@@ -3,6 +3,7 @@ package com.wa.main;
 
 
 import com.cmsl.security.Keys;
+import com.wa.hotline.HotlineCaseHandler;
 import com.wa.hotline.HotlineController;
 import com.wa.hotline.HotlineFormController;
 import com.wa.index.IndexController;
@@ -67,9 +68,11 @@ public class Main {
         get(hotlinePath, hotlineController.getMainRoute());
 
         //HotlineForm
+        HotlineCaseHandler hotlineCaseHandler = new HotlineCaseHandler(handlers.getDirectoriesHandler().getHotlineCasesDirectory());
         String hotlineFormPath = ViewUtil.PATH.getWebInstance().getHOTLINEFORM();
         String hotlineFormTemplatePath = ViewUtil.PATH.getTemplateInstance().getHOTLINEREPORT();
-        HotlineFormController hotlineFormController = new HotlineFormController(hotlineFormPath,hotlineFormTemplatePath,privateKey,handlers.getLoggersHandler().getHotlineLogger());
+        HotlineFormController hotlineFormController = new HotlineFormController(hotlineFormPath,hotlineFormTemplatePath,
+                privateKey, hotlineCaseHandler, handlers.getLoggersHandler().getHotlineLogger());
         get(hotlineFormPath, hotlineFormController.getMainRoute());
         post(ViewUtil.PATH.getWebInstance().getHOTLINEFORMSUBMIT(), hotlineFormController.serveHotlineFormSubmission);
 

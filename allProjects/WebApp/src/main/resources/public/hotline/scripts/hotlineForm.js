@@ -16,16 +16,47 @@ function submitHotlineForm(){
     encrypt.setPublicKey(publicKey);
 
     var email = document.getElementById('email').value;
-
     if(!email){
         $("#errorEmail").show();
         return;
     }
-
     var encryptedEmail = encrypt.encrypt(email);
-    console.log("Email Encry: "+ encryptedEmail);
 
-    var data = { "email" : encryptedEmail};
+
+    var file = document.getElementById('file');
+    if(file.files.length){
+        var reader = new FileReader();
+        reader.onload = function(){
+            var data = reader.result;
+            var array = new Int8Array(data);
+            var splits = Math.ceil(array.length / 128) ;
+            console.log(splits)
+
+            var parts = new Array(splits);
+            for(var i=0;i<array.length;i+=128){
+                if(i>array.length)
+                    i-= ( i-array.length);
+                parts[Math.floor(i/128)] = encrypt.encrypt(arrayBufferToBase64(array.slice(i,i+128)));
+            }
+            sendPostRequest(encryptedEmail,parts);
+        }
+        reader.readAsArrayBuffer(file.files[0]);
+    }else{
+
+        sendPostRequest(encryptedEmail,null);
+
+    }
+}
+
+function sendPostRequest(email,splits){
+    var data = { "email" : email};
+    var splitsData = "";
+    for (var i=0;i<splits.length;i++){
+        splitsData += i + ":" + splits[i] +"\t";
+    }
+    data.files= splitsData;
+
+    console.log(data);
     $.post("/hotline/report",data,function(result){
         var json = JSON.parse(result);
         console.log(json.msg);
@@ -36,7 +67,13 @@ function submitHotlineForm(){
         );
 
     });
-
-
-
+}
+function arrayBufferToBase64( buffer ) {
+    var binary = '';
+    var bytes = new Uint8Array( buffer );
+    var len = bytes.byteLength;
+    for (var i = 0; i < len; i++) {
+        binary += String.fromCharCode( bytes[ i ] );
+    }
+    return window.btoa( binary );
 }
