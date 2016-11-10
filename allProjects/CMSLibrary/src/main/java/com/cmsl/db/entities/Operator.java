@@ -14,6 +14,18 @@ public class Operator {
     private final String password;
     private final String salt;
 
+    public Operator(String operator_id, String name, String surname, String telephone, String email, String username, String password, String salt) {
+        this.operator_id = operator_id;
+        this.name = name;
+        this.surname = surname;
+        this.telephone = telephone;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.salt = salt;
+
+    }
+
     public String getOperator_id() {
         return operator_id;
     }
@@ -44,16 +56,5 @@ public class Operator {
 
     public String getSalt() {
         return salt;
-    }
-
-    public Operator(String operator_id, String name, String surname, String telephone, String email, String username, String password, String salt) {
-        this.operator_id = operator_id;
-        this.name = name;
-        this.surname = surname;
-        this.telephone = telephone;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-        this.salt = salt;
     }
 }

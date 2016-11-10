@@ -1,6 +1,6 @@
 package com.wa.chat;
 
-import com.wa.Utils.ViewUtil;
+import com.wa.utils.ViewUtil;
 import spark.Route;
 
 import java.util.HashMap;

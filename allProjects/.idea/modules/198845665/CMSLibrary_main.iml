@@ -12,6 +12,7 @@
     <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.34" level="project" />
     <orderEntry type="library" name="Gradle: com.sparkjava:spark-core:2.5" level="project" />
     <orderEntry type="library" name="Gradle: com.sparkjava:spark-template-freemarker:2.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.7" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.13" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-server:9.3.6.v20151106" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-webapp:9.3.6.v20151106" level="project" />
