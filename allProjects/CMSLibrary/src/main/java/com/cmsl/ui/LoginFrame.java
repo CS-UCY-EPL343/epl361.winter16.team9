@@ -28,13 +28,13 @@ public abstract class LoginFrame extends JFrame {
        txt_password = new JPasswordField(16);
 
        txt_username.addKeyListener(new KeyAdapter() {
-           public void keyReleased(KeyEvent e) {
+           public void keyPressed(KeyEvent e) {
                if(e.getKeyCode()==KeyEvent.VK_ENTER)
                    txt_password.requestFocus();
            }
        });
        txt_password.addKeyListener(new KeyAdapter() {
-           public void keyReleased(KeyEvent e) {
+           public void keyPressed(KeyEvent e) {
                if(e.getKeyCode()==KeyEvent.VK_ENTER)
                    if(!login())
                        txt_username.requestFocus();

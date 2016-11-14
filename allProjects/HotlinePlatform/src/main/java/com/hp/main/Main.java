@@ -2,6 +2,7 @@ package com.hp.main;
 
 import com.cmsl.db.DBConnection;
 import com.hp.ui.HotlineLoginFrame;
+import com.hp.ui.HotlinePlatformFrame;
 import com.sun.javafx.event.EventQueue;
 
 import javax.swing.*;
@@ -19,17 +20,24 @@ public class Main {
      */
     public static void main(String args[]) throws InvocationTargetException, InterruptedException {
 
+        String path = "data/hotline/";
+
         try {
             DBConnection connection = new DBConnection("localhost","hotline","team9","Epl361project!");
-        SwingUtilities.invokeAndWait( () -> {
 
-            HotlineLoginFrame loginFrame = new HotlineLoginFrame(200,280,connection);
-            loginFrame.setVisible(true);
+            SwingUtilities.invokeAndWait( () -> {
 
-        });
+                //HotlinePlatformFrame platformFrame = new HotlinePlatformFrame(path+"cases/");
+                //platformFrame.setVisible(true);
+
+                HotlineLoginFrame loginFrame = new HotlineLoginFrame(200,280,connection);
+                loginFrame.setVisible(true);
+
+            });
         } catch (Exception e) {
+            e.printStackTrace();
             System.err.println("Failed to connect to Hotline Database");
-            return;
+            System.exit(1);
         }
 
     }

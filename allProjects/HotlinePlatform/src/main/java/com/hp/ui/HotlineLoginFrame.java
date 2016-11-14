@@ -21,7 +21,8 @@ public class HotlineLoginFrame extends LoginFrame {
         super("Hotline", width, height);
         operatorService = new OperatorService(connection);
         bttn_sign_in.addActionListener(event ->{
-            login();
+
+
         });
 
         bttn_exit.addActionListener(event ->{
@@ -45,15 +46,20 @@ public class HotlineLoginFrame extends LoginFrame {
         switch(code){
             case 0:
                 System.out.println("User Authenticated!");
+                HotlinePlatformFrame hotlinePlatformFrame = new HotlinePlatformFrame("./data/hotline/cases/");
+                hotlinePlatformFrame.setVisible(true);
+                this.setVisible(false);
                 return true;
             case 1:
                 System.out.println("User not found!");
                 clearUsername();
                 clearPassword();
+                JOptionPane.showMessageDialog(this,"User not found!","Error",JOptionPane.INFORMATION_MESSAGE);
                 return false;
             case 2:
                 System.out.println("Password doesn't match!");
                 clearPassword();
+                JOptionPane.showMessageDialog(this,"Your password is wrong!","Error",JOptionPane.INFORMATION_MESSAGE);
                 return false;
         }
 
