@@ -21,25 +21,7 @@ public class HotlineLoginFrame extends LoginFrame {
         super("Hotline", width, height);
         operatorService = new OperatorService(connection);
         bttn_sign_in.addActionListener(event ->{
-
-            String username = getUsername();
-            String password = getPassword();
-            int code = operatorService.authenticate(username,password);
-            switch(code){
-                case 0:
-                    System.out.println("User Authenticated!");
-                    break;
-                case 1:
-                    System.out.println("User not found!");
-                    clearUsername();
-                    clearPassword();
-                    break;
-                case 2:
-                    System.out.println("Password doesn't match!");
-                    clearPassword();
-                    break;
-            }
-
+            login();
         });
 
         bttn_exit.addActionListener(event ->{
@@ -54,4 +36,27 @@ public class HotlineLoginFrame extends LoginFrame {
     }
 
 
+    @Override
+    public boolean login() {
+
+        String username = getUsername();
+        String password = getPassword();
+        int code = operatorService.authenticate(username,password);
+        switch(code){
+            case 0:
+                System.out.println("User Authenticated!");
+                return true;
+            case 1:
+                System.out.println("User not found!");
+                clearUsername();
+                clearPassword();
+                return false;
+            case 2:
+                System.out.println("Password doesn't match!");
+                clearPassword();
+                return false;
+        }
+
+        return false;
+    }
 }

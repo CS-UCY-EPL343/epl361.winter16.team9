@@ -1,6 +1,5 @@
 package com.wa.hotline;
 
-import com.cmsl.security.Keys;
 import com.google.gson.JsonObject;
 import com.wa.utils.Controller;
 import spark.Request;
@@ -8,15 +7,33 @@ import spark.Response;
 import spark.Route;
 
 import java.security.PrivateKey;
-import java.util.Base64;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Created by zgeorg03 on 11/6/16.
  */
 public class HotlineFormController  extends Controller{
+    private final List<String> topics = Stream.of(
+    "Παιδική πορνογραφία",
+    "Ρατσισμός/ξενοφοβία",
+    "Κλοπή προσωπικών δεδομένων(π.χ. ψεύτικο προφίλ)",
+    "Παραβίαση του απορρήτου των επικοινωνιών",
+    "Διαδικτυακός εκφοβισμός",
+    "Σεξουαλική παρενόχληση",
+    "Παρατεταμένη χρήση",
+    "Ηλεκτρονική αποπλάνηση",
+    "Μηνύματα σεξουαλικού περιεχομένου(sexting)",
+    "Ανεπιθύμητη επαφή από αγνώστους",
+    "Ανεπιθύμητη αλληλογραφία",
+    "Εμπορικοί κίνδυνοι/απειλές (π.χ. phishing)",
+    "Site Suggestions",
+    "Product Support"
+    ).collect(Collectors.toList());
 
 
     private PrivateKey privateKey;
@@ -62,6 +79,7 @@ public class HotlineFormController  extends Controller{
     };
     @Override
     protected void mainRoute(Request request, Map model, Response response) {
+        model.put("topics",topics);
 
     }
 }

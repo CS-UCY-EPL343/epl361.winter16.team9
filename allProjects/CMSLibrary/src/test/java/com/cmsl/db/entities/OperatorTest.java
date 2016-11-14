@@ -26,7 +26,7 @@ public class OperatorTest {
         DBConnection connection = new DBConnection("localhost", "hotline", "team9", "Epl361project!");
         OperatorService operatorService = new OperatorService(connection);
         boolean ans = operatorService.deleteOperator("test1");
-        boolean ans1 = operatorService.deleteOperator("test2");
+        boolean ans1 = operatorService.deleteOperator("test1");
         connection.close();
         assert ans && ans1;
     }

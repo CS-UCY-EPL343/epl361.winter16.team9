@@ -7,11 +7,12 @@ import com.cmsl.db.DBConnection;
  */
 public abstract class DBService {
 
+    protected final DBConnection connection;
+
     public DBConnection getConnection() {
         return connection;
     }
 
-    protected final DBConnection connection;
 
     public DBService(DBConnection connection) {
         this.connection = connection;

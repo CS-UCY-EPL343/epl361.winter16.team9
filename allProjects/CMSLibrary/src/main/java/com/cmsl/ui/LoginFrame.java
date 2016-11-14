@@ -2,11 +2,13 @@ package com.cmsl.ui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 /**
  * Created by zgeorg03 on 11/7/16.
  */
-public class LoginFrame extends JFrame {
+public abstract class LoginFrame extends JFrame {
 
     private final JLabel lbl_username;
     private final JLabel lbl_password;
@@ -24,6 +26,20 @@ public class LoginFrame extends JFrame {
        lbl_password = new JLabel("Password");
        txt_username = new JTextField(16);
        txt_password = new JPasswordField(16);
+
+       txt_username.addKeyListener(new KeyAdapter() {
+           public void keyReleased(KeyEvent e) {
+               if(e.getKeyCode()==KeyEvent.VK_ENTER)
+                   txt_password.requestFocus();
+           }
+       });
+       txt_password.addKeyListener(new KeyAdapter() {
+           public void keyReleased(KeyEvent e) {
+               if(e.getKeyCode()==KeyEvent.VK_ENTER)
+                   if(!login())
+                       txt_username.requestFocus();
+           }
+       });
        panel.add(lbl_username);
        panel.add(txt_username);
        panel.add(lbl_password);
@@ -66,4 +82,8 @@ public class LoginFrame extends JFrame {
         return new String(txt_password.getPassword());
     }
 
+    /**
+     * Login
+     */
+    public abstract boolean login();
 }

@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: WebApp
-Implementation-Version: 1.0
-Main-Class: com.wa.main.Main
-

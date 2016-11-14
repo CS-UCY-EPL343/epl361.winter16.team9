@@ -58,7 +58,7 @@ public class Path {
         private  final String INDEX = "index/index.ftl";
 
         private  final String HOTLINE = "hotline/hotline.ftl";
-        private  final String HOTLINEREPORT = "hotline/hotlineForm.ftl";
+        private  final String HOTLINEREPORT = "hotline/hotlineForm.html";
 
         private  final String SUCCESSFULSUBMIT = "/hotline/successfulSubmission.ftl";
 

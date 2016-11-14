@@ -23,10 +23,9 @@
         <nav>
             <ul class="nav nav-justified">
                 <li  <#if active == "index"> class="active" </#if> > <a href="${WebPath.getINDEX()}">Home</a></li>
-                <li  <#if active == "hotline"> class="active" </#if> > <a href="${WebPath.getHOTLINE()}">Hotline</a></li>
-                <li  <#if active == "helpline"> class="active" </#if> > <a href="${WebPath.getHELPLINE()}">Helpline</a></li>
-                <li  <#if active == "chat"> class="active" </#if> > <a href="${WebPath.getCHAT()}">Chat</a></li>
-                <li><a href="#">Describe your problem</a></li>
+                <li  <#if active == "hotline"> class="active" </#if> > <a href="${WebPath.getHOTLINE()}">Report Incident</a></li>
+                <li  <#if active == "helpline"> class="active" </#if> > <a href="${WebPath.getHELPLINE()}">Chat</a></li>
+                <li  <#if active == "chat"> class="active" </#if> > <a href="${WebPath.getCHAT()}">FAQ</a></li>
             </ul>
         </nav>
     </div>
