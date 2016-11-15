@@ -15,10 +15,10 @@ import java.util.logging.Logger;
 /**
  * Created by zgeorg03 on 11/6/16.
  */
-public class HotlineController extends Controller {
+public class ReportsController extends Controller {
 
 
-    public HotlineController(String path,String templatePath, Logger logger) {
+    public ReportsController(String path, String templatePath, Logger logger) {
         super(path,templatePath,logger);
     }
 

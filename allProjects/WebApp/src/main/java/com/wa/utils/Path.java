@@ -18,10 +18,11 @@ public class Path {
     public  class Web{
 
         private  final String INDEX = "/";
+        private  final String REPORTS = "/reports";
+        private  final String HOTLINEFORM = "reports/hotline";
 
         private  final String HOTLINE = "/hotline";
 
-        private  final String HOTLINEFORM = "/hotline/report";
         private  final String HOTLINEFORMSUBMIT = "/hotline/report";
 
         private  final String HELPLINE = "/helpline";
@@ -52,10 +53,16 @@ public class Path {
             return HOTLINEFORMSUBMIT;
         }
 
+        public String getREPORTS() {
+            return REPORTS;
+        }
     }
 
     public  class Template{
-        private  final String INDEX = "index/index.ftl";
+        private  final String INDEX = "index/index.html";
+        private  final String REPORTS = "reports/report.html";
+        private  final String HOTLINEFORM = "reports/hotline.html";
+
 
         private  final String HOTLINE = "hotline/hotline.ftl";
         private  final String HOTLINEREPORT = "hotline/hotlineForm.html";
@@ -89,6 +96,14 @@ public class Path {
 
         public String getSUCCESSFULSUBMIT() {
             return SUCCESSFULSUBMIT;
+        }
+
+        public String getREPORTS() {
+            return REPORTS;
+        }
+
+        public String getHOTLINEFORM() {
+            return HOTLINEFORM;
         }
     }
 

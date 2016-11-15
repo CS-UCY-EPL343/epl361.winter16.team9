@@ -4,7 +4,7 @@ package com.wa.main;
 
 import com.cmsl.security.Keys;
 import com.wa.hotline.HotlineCaseHandler;
-import com.wa.hotline.HotlineController;
+import com.wa.hotline.ReportsController;
 import com.wa.hotline.HotlineFormController;
 import com.wa.index.IndexController;
 import com.wa.utils.Handlers;
@@ -24,6 +24,7 @@ public class Main {
 
 
     public static void main(String args[]) throws Exception {
+        secure("./keys/keystore.jks","Epl361team9",null,null);
         int port = 8000;
         String location ="./data/";
         if(args.length==2){
@@ -36,15 +37,15 @@ public class Main {
         String toks[]= ClassLoader.getSystemResource("com/wa/main/Main.class").toString().split(":");
         if(toks[0].equalsIgnoreCase("file")){
             System.out.println("Running from file");
-            staticFiles.location("/public");
+            staticFileLocation("/public/");
         }else{
             System.out.println("Running from jar");
             //Zacharias PC
             //externalStaticFileLocation("/home/zgeorg03/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/WebApp/src/main/resources/public");
             //Raspberry
             externalStaticFileLocation("/home/zgeorg03/public");
-
         }
+        staticFiles.expireTime(500);
         File file = new File(System.getProperty("user.dir"));
         String name =file.getAbsolutePath()+ "/keys/test";
         KeyPair keyPair = Keys.loadKeyPair(name);
@@ -61,11 +62,11 @@ public class Main {
         get(indexPath, indexController.getMainRoute());
 
 
-        //Hotline
-        String hotlinePath = ViewUtil.PATH.getWebInstance().getHOTLINE();
-        String hotlineTemplatePath = ViewUtil.PATH.getTemplateInstance().getHOTLINE();
-        HotlineController hotlineController = new HotlineController(hotlinePath,hotlineTemplatePath,handlers.getLoggersHandler().getHotlineLogger());
-        get(hotlinePath, hotlineController.getMainRoute());
+        //Reports
+        String reportsPath = ViewUtil.PATH.getWebInstance().getREPORTS();
+        String reportsTemplatePath = ViewUtil.PATH.getTemplateInstance().getREPORTS();
+        ReportsController reportsController = new ReportsController(reportsPath,reportsTemplatePath,handlers.getLoggersHandler().getRootLogger());
+        get(reportsPath, reportsController.getMainRoute());
 
         //HotlineForm
         HotlineCaseHandler hotlineCaseHandler = new HotlineCaseHandler(handlers.getDirectoriesHandler().getHotlineCasesDirectory());
