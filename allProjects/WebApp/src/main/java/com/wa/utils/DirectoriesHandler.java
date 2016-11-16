@@ -29,9 +29,9 @@ public class DirectoriesHandler {
         rootDirectory = constructDirectory(location);
         rootLoggerDirectory = constructDirectory(location+"/log/");
 
-        hotlineDirectory = constructDirectory(location+"hotline/");
-        hotlineLoggerDirectory = constructDirectory(location+"hotline/log/");
-        hotlineCasesDirectory = constructDirectory(location+"hotline/cases/");
+        hotlineDirectory = constructDirectory(location+"reports/");
+        hotlineLoggerDirectory = constructDirectory(location+"reports/log/");
+        hotlineCasesDirectory = constructDirectory(location+"reports/cases/");
 
         helplineDirectory = constructDirectory(location+"helpline/");
         helplineLoggerDirectory = constructDirectory(location+"helpline/log/");
@@ -53,7 +53,7 @@ public class DirectoriesHandler {
                 Files.createDirectory(fp.toPath());
                 System.out.println("[Info] Created directory: " + fp.getAbsolutePath());
             } catch (IOException e) {
-                System.err.println("Failed to create hotline directory");
+                System.err.println("Failed to create reports directory");
             }
         }else if(!fp.isDirectory()){
             System.err.println(location +" is not a directory");

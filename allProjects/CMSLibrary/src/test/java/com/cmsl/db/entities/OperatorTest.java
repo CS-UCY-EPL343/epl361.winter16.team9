@@ -13,7 +13,7 @@ public class OperatorTest {
 
     @Test
     public void NewOperatorTest() throws Exception {
-        DBConnection connection = new DBConnection("localhost","hotline","team9","Epl361project!");
+        DBConnection connection = new DBConnection("localhost","reports","team9","Epl361project!");
         OperatorService operatorService = new OperatorService(connection);
         boolean ans =   operatorService.createOperator("1","Test1","Test1Surname","123456","test1@mail.com","test1","test");
         boolean ans1 =   operatorService.createOperator("2","Test2","Test2Surname","123456","test2@mail.com","test2","test");
@@ -23,7 +23,7 @@ public class OperatorTest {
 
     @Test
     public void deleteOperatorTest() throws Exception {
-        DBConnection connection = new DBConnection("localhost", "hotline", "team9", "Epl361project!");
+        DBConnection connection = new DBConnection("localhost", "reports", "team9", "Epl361project!");
         OperatorService operatorService = new OperatorService(connection);
         boolean ans = operatorService.deleteOperator("test1");
         boolean ans1 = operatorService.deleteOperator("test1");
@@ -32,7 +32,7 @@ public class OperatorTest {
     }
     @Test
     public void authenticateTest() throws Exception {
-        DBConnection connection = new DBConnection("localhost","hotline","team9","Epl361project!");
+        DBConnection connection = new DBConnection("localhost","reports","team9","Epl361project!");
         OperatorService operatorService = new OperatorService(connection);
         //Correct password
         int code  =   operatorService.authenticate("test1","test");

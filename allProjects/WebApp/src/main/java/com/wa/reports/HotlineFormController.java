@@ -1,7 +1,7 @@
-package com.wa.hotline;
+package com.wa.reports;
 
 import com.google.gson.JsonObject;
-import com.wa.utils.Controller;
+import com.wa.controllers.Controller;
 import spark.Request;
 import spark.Response;
 import spark.Route;

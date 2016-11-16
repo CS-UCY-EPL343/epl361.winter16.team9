@@ -40,7 +40,7 @@ public class LoggersHandler {
 
 
         FileHandler fh = new FileHandler(base+"/log/" + name);
-        FileHandler hotlineFh = new FileHandler(base+"hotline/log/"+name);
+        FileHandler hotlineFh = new FileHandler(base+"reports/log/"+name);
         FileHandler helplineFh = new FileHandler(base+"helpline/log/"+name);
         FileHandler descriptionFh = new FileHandler(base+"description/log/"+name);
 
@@ -52,7 +52,7 @@ public class LoggersHandler {
         rootLogger = Logger.getLogger("/log/"+name);
         rootLogger.addHandler(fh);
 
-        hotlineLogger = Logger.getLogger("hotline/log/"+name);
+        hotlineLogger = Logger.getLogger("reports/log/"+name);
         hotlineLogger.addHandler(hotlineFh);
 
         helplineLogger = Logger.getLogger("helpline/log/"+name);

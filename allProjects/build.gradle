@@ -21,6 +21,8 @@ subprojects{
 
         compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
 
+        // https://mvnrepository.com/artifact/com.sparkjava/spark-debug-tools
+        //compile group: 'com.sparkjava', name: 'spark-debug-tools', version: '0.5'
 
 
     }

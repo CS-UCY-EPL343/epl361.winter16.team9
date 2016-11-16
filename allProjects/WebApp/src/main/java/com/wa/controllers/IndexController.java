@@ -1,6 +1,6 @@
-package com.wa.index;
+package com.wa.controllers;
 
-import com.wa.utils.Controller;
+import com.wa.controllers.Controller;
 import com.wa.utils.ViewUtil;
 import spark.Request;
 import spark.Response;

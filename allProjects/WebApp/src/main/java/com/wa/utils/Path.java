@@ -19,11 +19,12 @@ public class Path {
 
         private  final String INDEX = "/";
         private  final String REPORTS = "/reports";
-        private  final String HOTLINEFORM = "reports/hotline";
+        private  final String FAQ = "/faq";
+        private  final String HOTLINEFORM = "reports/reports";
 
-        private  final String HOTLINE = "/hotline";
+        private  final String HOTLINE = "/reports";
 
-        private  final String HOTLINEFORMSUBMIT = "/hotline/report";
+        private  final String HOTLINEFORMSUBMIT = "/reports/report";
 
         private  final String HELPLINE = "/helpline";
 
@@ -56,22 +57,27 @@ public class Path {
         public String getREPORTS() {
             return REPORTS;
         }
+
+        public String getFAQ() {
+            return FAQ;
+        }
     }
 
     public  class Template{
-        private  final String INDEX = "index/index.html";
-        private  final String REPORTS = "reports/report.html";
-        private  final String HOTLINEFORM = "reports/hotline.html";
+        private  final String INDEX = "index/index.ftl";
+        private  final String REPORTS = "reports/report.ftl";
+        private  final String FAQ = "/faq/faq.ftl";
+        private  final String CHAT = "/chat/chat.ftl";
+        private  final String HOTLINEFORM = "reports/reports.html";
 
 
-        private  final String HOTLINE = "hotline/hotline.ftl";
-        private  final String HOTLINEREPORT = "hotline/hotlineForm.html";
+        private  final String HOTLINE = "reports/reports.ftl";
+        private  final String HOTLINEREPORT = "reports/hotlineForm.html";
 
-        private  final String SUCCESSFULSUBMIT = "/hotline/successfulSubmission.ftl";
+        private  final String SUCCESSFULSUBMIT = "/reports/successfulSubmission.ftl";
 
         private  final String HELPLINE = "helpline/helpline.ftl";
 
-        private  final String CHAT = "chat/chat.ftl";
 
 
         public  String getINDEX() {
@@ -104,6 +110,10 @@ public class Path {
 
         public String getHOTLINEFORM() {
             return HOTLINEFORM;
+        }
+
+        public String getFAQ() {
+            return FAQ;
         }
     }
 

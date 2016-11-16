@@ -46,7 +46,7 @@ public class HotlineLoginFrame extends LoginFrame {
         switch(code){
             case 0:
                 System.out.println("User Authenticated!");
-                HotlinePlatformFrame hotlinePlatformFrame = new HotlinePlatformFrame("./data/hotline/cases/");
+                HotlinePlatformFrame hotlinePlatformFrame = new HotlinePlatformFrame("./data/reports/cases/");
                 hotlinePlatformFrame.setVisible(true);
                 this.setVisible(false);
                 return true;

@@ -14,7 +14,7 @@ public class DBConnection {
     /**
      * Construct a new Database connection
      * @param host localhost
-     * @param database hotline or helpline
+     * @param database reports or helpline
      * @param user team9
      * @param password Epl361project!
      * @throws Exception

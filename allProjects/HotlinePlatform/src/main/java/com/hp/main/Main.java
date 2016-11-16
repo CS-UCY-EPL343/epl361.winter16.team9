@@ -20,10 +20,10 @@ public class Main {
      */
     public static void main(String args[]) throws InvocationTargetException, InterruptedException {
 
-        String path = "data/hotline/";
+        String path = "data/reports/";
 
         try {
-            DBConnection connection = new DBConnection("localhost","hotline","team9","Epl361project!");
+            DBConnection connection = new DBConnection("localhost","reports","team9","Epl361project!");
 
             SwingUtilities.invokeAndWait( () -> {
 

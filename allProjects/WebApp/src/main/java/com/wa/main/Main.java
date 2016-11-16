@@ -1,12 +1,13 @@
 package com.wa.main;
 
 
-
 import com.cmsl.security.Keys;
-import com.wa.hotline.HotlineCaseHandler;
-import com.wa.hotline.ReportsController;
-import com.wa.hotline.HotlineFormController;
-import com.wa.index.IndexController;
+import com.wa.controllers.ChatController;
+import com.wa.controllers.FAQController;
+import com.wa.controllers.IndexController;
+import com.wa.controllers.ReportsController;
+import com.wa.reports.HotlineCaseHandler;
+import com.wa.reports.HotlineFormController;
 import com.wa.utils.Handlers;
 import com.wa.utils.ViewUtil;
 
@@ -41,11 +42,14 @@ public class Main {
         }else{
             System.out.println("Running from jar");
             //Zacharias PC
-            //externalStaticFileLocation("/home/zgeorg03/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/WebApp/src/main/resources/public");
+            externalStaticFileLocation("/home/zgeorg03/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/WebApp/src/main/resources/public");
             //Raspberry
-            externalStaticFileLocation("/home/zgeorg03/public");
+            //externalStaticFileLocation("/home/zgeorg03/public");
         }
         staticFiles.expireTime(500);
+
+
+
         File file = new File(System.getProperty("user.dir"));
         String name =file.getAbsolutePath()+ "/keys/test";
         KeyPair keyPair = Keys.loadKeyPair(name);
@@ -78,6 +82,17 @@ public class Main {
         post(ViewUtil.PATH.getWebInstance().getHOTLINEFORMSUBMIT(), hotlineFormController.serveHotlineFormSubmission);
 
 
+        //CHAT
+        String chatPath = ViewUtil.PATH.getWebInstance().getCHAT();
+        String chatTemplatePath = ViewUtil.PATH.getTemplateInstance().getCHAT();
+        ChatController chatController = new ChatController(chatPath,chatTemplatePath,handlers.getLoggersHandler().getRootLogger());
+        get(chatPath, chatController.getMainRoute());
+
+        //FAQ
+        String faqPath = ViewUtil.PATH.getWebInstance().getFAQ();
+        String faqTemplatePath = ViewUtil.PATH.getTemplateInstance().getFAQ();
+        FAQController faqController = new FAQController(faqPath,faqTemplatePath,handlers.getLoggersHandler().getRootLogger());
+        get(faqPath, faqController.getMainRoute());
 
         after((request, response) -> {
             response.header("Content-Encoding", "gzip");
