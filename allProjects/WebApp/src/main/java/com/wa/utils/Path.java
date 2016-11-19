@@ -20,11 +20,8 @@ public class Path {
         private  final String INDEX = "/";
         private  final String REPORTS = "/reports";
         private  final String FAQ = "/faq";
-        private  final String HOTLINEFORM = "reports/reports";
-
-        private  final String HOTLINE = "/reports";
-
-        private  final String HOTLINEFORMSUBMIT = "/reports/report";
+        private  final String HOTLINE = "/reports/hotline";
+       private  final String HOTLINESUBMIT = "/reports/hotline/submit";
 
         private  final String HELPLINE = "/helpline";
 
@@ -38,21 +35,10 @@ public class Path {
             return HOTLINE;
         }
 
-        public String getHELPLINE() {
-            return HELPLINE;
-        }
-
         public String getCHAT() {
             return CHAT;
         }
 
-        public String getHOTLINEFORM() {
-            return HOTLINEFORM;
-        }
-
-        public String getHOTLINEFORMSUBMIT() {
-            return HOTLINEFORMSUBMIT;
-        }
 
         public String getREPORTS() {
             return REPORTS;
@@ -61,6 +47,10 @@ public class Path {
         public String getFAQ() {
             return FAQ;
         }
+
+        public String getHOTLINESUBMIT() {
+            return HOTLINESUBMIT;
+        }
     }
 
     public  class Template{
@@ -68,11 +58,10 @@ public class Path {
         private  final String REPORTS = "reports/report.ftl";
         private  final String FAQ = "/faq/faq.ftl";
         private  final String CHAT = "/chat/chat.ftl";
-        private  final String HOTLINEFORM = "reports/reports.html";
+
+        private  final String HOTLINE = "reports/hotlineForm.ftl";
 
 
-        private  final String HOTLINE = "reports/reports.ftl";
-        private  final String HOTLINEREPORT = "reports/hotlineForm.html";
 
         private  final String SUCCESSFULSUBMIT = "/reports/successfulSubmission.ftl";
 
@@ -96,9 +85,6 @@ public class Path {
             return CHAT;
         }
 
-        public String getHOTLINEREPORT() {
-            return HOTLINEREPORT;
-        }
 
         public String getSUCCESSFULSUBMIT() {
             return SUCCESSFULSUBMIT;
@@ -108,9 +94,6 @@ public class Path {
             return REPORTS;
         }
 
-        public String getHOTLINEFORM() {
-            return HOTLINEFORM;
-        }
 
         public String getFAQ() {
             return FAQ;

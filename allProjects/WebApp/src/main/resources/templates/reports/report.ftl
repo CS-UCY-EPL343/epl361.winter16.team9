@@ -76,19 +76,20 @@
                     <h2 class="intro-text text-center">
                         <strong>Call Us</strong>
                     </h2>
-                    <hr>
+                    <hr/>
                     <p>If you want you can call our call center to talk with an opoerator and make a report at:</p>
                     <h2 class="intro-text text-center">
                         <strong>0123</strong>
                     </h2>
-                    <hr>
+                    <hr/>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <script src="/reports/reports.js"></script>
-</div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="/js/reports.js"></script>
+</div
 
 </@layout.masterTemplate>

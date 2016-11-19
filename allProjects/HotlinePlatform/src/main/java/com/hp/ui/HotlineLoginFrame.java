@@ -1,6 +1,7 @@
 package com.hp.ui;
 
 import com.cmsl.db.DBConnection;
+import com.cmsl.db.entities.Operator;
 import com.cmsl.db.services.OperatorService;
 import com.cmsl.ui.LoginFrame;
 
@@ -20,19 +21,7 @@ public class HotlineLoginFrame extends LoginFrame {
     public HotlineLoginFrame(int width, int height,DBConnection connection) {
         super("Hotline", width, height);
         operatorService = new OperatorService(connection);
-        bttn_sign_in.addActionListener(event ->{
 
-
-        });
-
-        bttn_exit.addActionListener(event ->{
-            int ans = JOptionPane.showOptionDialog(this,"Do you want to exit?","Exit",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,
-                    null,new String[]{"Yes","No"},"Yes");
-
-            if(ans==0)
-                System.exit(0);
-
-        });
 
     }
 
@@ -46,7 +35,8 @@ public class HotlineLoginFrame extends LoginFrame {
         switch(code){
             case 0:
                 System.out.println("User Authenticated!");
-                HotlinePlatformFrame hotlinePlatformFrame = new HotlinePlatformFrame("./data/reports/cases/");
+                Operator operator = operatorService.getOperator(username);
+                HotlinePlatformFrame hotlinePlatformFrame = new HotlinePlatformFrame("./data/hotline/cases/",operator);
                 hotlinePlatformFrame.setVisible(true);
                 this.setVisible(false);
                 return true;

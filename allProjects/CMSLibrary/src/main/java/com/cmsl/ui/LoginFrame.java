@@ -50,7 +50,17 @@ public abstract class LoginFrame extends JFrame {
 
 
        bttn_sign_in = new JButton("Sign In");
+       bttn_sign_in.addActionListener(x -> login());
+
        bttn_exit = new JButton("Exit");
+       bttn_exit.addActionListener(event ->{
+           int ans = JOptionPane.showOptionDialog(this,"Do you want to exit?","Exit",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,
+                   null,new String[]{"Yes","No"},"Yes");
+
+           if(ans==0)
+               System.exit(0);
+
+       });
        panelBottom.add(bttn_exit);
        panelBottom.add(bttn_sign_in);
 

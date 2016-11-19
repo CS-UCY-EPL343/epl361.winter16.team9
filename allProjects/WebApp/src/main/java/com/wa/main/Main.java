@@ -2,12 +2,9 @@ package com.wa.main;
 
 
 import com.cmsl.security.Keys;
-import com.wa.controllers.ChatController;
-import com.wa.controllers.FAQController;
-import com.wa.controllers.IndexController;
-import com.wa.controllers.ReportsController;
+import com.wa.controllers.*;
 import com.wa.reports.HotlineCaseHandler;
-import com.wa.reports.HotlineFormController;
+import com.wa.controllers.HotlineController;
 import com.wa.utils.Handlers;
 import com.wa.utils.ViewUtil;
 
@@ -42,9 +39,9 @@ public class Main {
         }else{
             System.out.println("Running from jar");
             //Zacharias PC
-            externalStaticFileLocation("/home/zgeorg03/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/WebApp/src/main/resources/public");
+            //externalStaticFileLocation("/home/zgeorg03/Copy/ComputerScience/7th-Semester/cs361/epl361.winter16.team9/allProjects/WebApp/src/main/resources/public");
             //Raspberry
-            //externalStaticFileLocation("/home/zgeorg03/public");
+            externalStaticFileLocation("/home/spenseve/cs361/public");
         }
         staticFiles.expireTime(500);
 
@@ -74,12 +71,13 @@ public class Main {
 
         //HotlineForm
         HotlineCaseHandler hotlineCaseHandler = new HotlineCaseHandler(handlers.getDirectoriesHandler().getHotlineCasesDirectory());
-        String hotlineFormPath = ViewUtil.PATH.getWebInstance().getHOTLINEFORM();
-        String hotlineFormTemplatePath = ViewUtil.PATH.getTemplateInstance().getHOTLINEREPORT();
-        HotlineFormController hotlineFormController = new HotlineFormController(hotlineFormPath,hotlineFormTemplatePath,
+        String hotlineFormPath = ViewUtil.PATH.getWebInstance().getHOTLINE();
+        String hotlineFormTemplatePath = ViewUtil.PATH.getTemplateInstance().getHOTLINE();
+
+        HotlineController hotlineController = new HotlineController(hotlineFormPath,hotlineFormTemplatePath,
                 privateKey, hotlineCaseHandler, handlers.getLoggersHandler().getHotlineLogger());
-        get(hotlineFormPath, hotlineFormController.getMainRoute());
-        post(ViewUtil.PATH.getWebInstance().getHOTLINEFORMSUBMIT(), hotlineFormController.serveHotlineFormSubmission);
+        get(hotlineFormPath, hotlineController.getMainRoute());
+        post(ViewUtil.PATH.getWebInstance().getHOTLINESUBMIT(), hotlineController.serveHotlineFormSubmission);
 
 
         //CHAT
@@ -100,7 +98,7 @@ public class Main {
 
         //Initialize
 
-        Keys.decrypt(privateKey,Keys.encrypt(publicKey,"test"));
+        //Keys.decrypt(privateKey,Keys.encrypt(publicKey,"test"));
 
     }
 

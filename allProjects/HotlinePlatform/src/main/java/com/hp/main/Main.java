@@ -23,7 +23,7 @@ public class Main {
         String path = "data/reports/";
 
         try {
-            DBConnection connection = new DBConnection("localhost","reports","team9","Epl361project!");
+            DBConnection connection = new DBConnection("localhost","hotline","team9","Epl361project!");
 
             SwingUtilities.invokeAndWait( () -> {
 

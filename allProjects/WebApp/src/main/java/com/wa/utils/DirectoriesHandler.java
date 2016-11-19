@@ -29,9 +29,9 @@ public class DirectoriesHandler {
         rootDirectory = constructDirectory(location);
         rootLoggerDirectory = constructDirectory(location+"/log/");
 
-        hotlineDirectory = constructDirectory(location+"reports/");
-        hotlineLoggerDirectory = constructDirectory(location+"reports/log/");
-        hotlineCasesDirectory = constructDirectory(location+"reports/cases/");
+        hotlineDirectory = constructDirectory(location+"hotline/");
+        hotlineLoggerDirectory = constructDirectory(location+"hotline/log/");
+        hotlineCasesDirectory = constructDirectory(location+"hotline/cases/");
 
         helplineDirectory = constructDirectory(location+"helpline/");
         helplineLoggerDirectory = constructDirectory(location+"helpline/log/");

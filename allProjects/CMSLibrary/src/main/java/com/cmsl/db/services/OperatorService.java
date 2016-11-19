@@ -1,6 +1,7 @@
 package com.cmsl.db.services;
 
 import com.cmsl.db.DBConnection;
+import com.cmsl.db.entities.Operator;
 import com.cmsl.security.Security;
 
 import java.sql.PreparedStatement;
@@ -135,4 +136,28 @@ public class OperatorService extends DBService {
         }
         return count == 1;
     }
+
+    public Operator getOperator(String username){
+        Operator operator = null;
+        try (Statement stmt = connection.getConnection().createStatement()){
+
+            ResultSet rs = stmt.executeQuery("SELECT operator_id,name,surname,telephone,email" +
+                    ",password,salt FROM Operator WHERE username='"+username +"'" );
+
+            if(rs.next()) {
+                String operator_id = rs.getString(1);
+                String name = rs.getString(2);
+                String surname = rs.getString(3);
+                String telephone = rs.getString(4);
+                String email = rs.getString(5);
+                String password = rs.getString(6);
+                String salt = rs.getString(7);
+                operator = new Operator(operator_id,name,surname,telephone,email,username,password,salt);
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            return null;
+        }
+        return operator;
+   }
 }

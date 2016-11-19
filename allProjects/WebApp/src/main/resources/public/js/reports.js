@@ -1,7 +1,7 @@
-
-function gotoHotlineForm(){
-    window.location = "reports/hotline/"
-}
-function gotoHelplineForm(){
-    window.location = "reports/helpline/"
-}
+$('#hotlineReport').click(function(){
+    window.location = "reports/hotline"
+});
+$('#helplineReport').click(function(){
+    console.log('Not implemented yet!')
+    //window.location = "reports/hotline/"
+});

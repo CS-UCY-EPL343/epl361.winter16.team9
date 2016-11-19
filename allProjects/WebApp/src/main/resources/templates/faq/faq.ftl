@@ -19,7 +19,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header"><i class="mdi-navigation-chevron-right"></i>Can i stay anonymous?</div>
+                                <div class="collapsible-header"><i class="mdi-navigation-chevron-right"></i>Can I stay anonymous?</div>
                                 <div class="collapsible-body">
                                     <p>Yes. In hotline form the name is  optional but in the helpline form the name is necessary.</p>
                                 </div>

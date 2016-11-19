@@ -91,7 +91,7 @@ project(':HotlinePlatform') {
         manifest {
             attributes 'Implementation-Title': archivesBaseName,
                     'Implementation-Version': version,
-                    'Main-Class': 'com.hp.security.Main'
+                    'Main-Class': 'com.hp.main.Main'
         }
         baseName = "HotlinePlatform"
         from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
