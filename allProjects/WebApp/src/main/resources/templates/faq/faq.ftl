@@ -1,6 +1,7 @@
 <#import "../masterTemplate.ftl" as layout/>
 
 <@layout.masterTemplate title="FAQ" active="faq" brand="Frequently Asked Questions" subBrand="Find answers to the mostly asked questions you make">
+
     <div class="container">
 
         <div class="row">
@@ -41,7 +42,6 @@
             </div>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
     </div>
 
