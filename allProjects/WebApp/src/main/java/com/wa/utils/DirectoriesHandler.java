@@ -41,6 +41,7 @@ public class DirectoriesHandler {
         descriptionLoggerDirectory = constructDirectory(location+"description/log/");
         descriptionCasesDirectory = constructDirectory(location+"description/cases/");
 
+        Runtime.getRuntime().exec("chmod 777 -R "+ rootDirectory.getAbsolutePath());
 
 
 

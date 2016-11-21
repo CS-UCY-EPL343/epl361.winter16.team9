@@ -64,6 +64,8 @@ public class EncryptedCase {
 
         while( (line=bf.readLine())!=null){
             String toks[] = line.split("\t");
+            if(toks.length!=2)
+                continue;
             String key = toks[0];
             String value = toks[1];
             if(key.equals("topic")) {

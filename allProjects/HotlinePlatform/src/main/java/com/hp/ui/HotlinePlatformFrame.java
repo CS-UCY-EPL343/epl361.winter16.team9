@@ -105,10 +105,11 @@ public class HotlinePlatformFrame extends  JFrame{
 
         evaluateCase.addActionListener(e -> {
             currentState=State.EVALUATING;
+            showCase();
             evaluateCase.setEnabled(false);
             sendToPolice.setEnabled(true);
             discard.setEnabled(true);
-            showCase();
+            close.setEnabled(true);
         });
 
         sendToPolice.addActionListener(e -> sendToPolice());
@@ -119,11 +120,20 @@ public class HotlinePlatformFrame extends  JFrame{
             mainPanel.remove(1);
             mainPanel.updateUI();
             currentState = State.NOTHING;
-            close.setEnabled(false);
             jListPendingCases.clearSelection();
             jListPendingCases.setEnabled(true);
+
+            jListNewCases.clearSelection();
             jListNewCases.setEnabled(true);
+
             firstEvaluationHappend=false;
+            //newCasesLoaded=false;
+
+            evaluateCase.setEnabled(false);
+            sendToPolice.setEnabled(false);
+            discard.setEnabled(false);
+            close.setEnabled(false);
+            mainPanel.updateUI();
         });
     }
 
@@ -138,10 +148,16 @@ public class HotlinePlatformFrame extends  JFrame{
         file.renameTo(Paths.get(parent,newName).toFile());
         mainPanel.remove(1);
         mainPanel.remove(1);
-        mainPanel.updateUI();
         currentState = State.NOTHING;
         firstEvaluationHappend=false;
         JOptionPane.showMessageDialog(this,"The case has been sent to police","Success",JOptionPane.INFORMATION_MESSAGE);
+
+        evaluateCase.setEnabled(false);
+        sendToPolice.setEnabled(false);
+        discard.setEnabled(false);
+        close.setEnabled(false);
+        mainPanel.updateUI();
+
 
 
 
@@ -157,8 +173,6 @@ public class HotlinePlatformFrame extends  JFrame{
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this,"Case not found! Make sure that is not deleted","Error",JOptionPane.INFORMATION_MESSAGE);
             currentState = State.NOTHING;
-            sendToPolice.setEnabled(false);
-            discard.setEnabled(false);
 
             return;
         }
@@ -263,7 +277,6 @@ public class HotlinePlatformFrame extends  JFrame{
             while(true) {
                 java.util.List<EncryptedCase> list = caseManager.findNewCases();
 
-
                 if(isChanged(list)) {
                     EncryptedCase array[] = new EncryptedCase[list.size()];
                     list.toArray(array);
@@ -271,13 +284,15 @@ public class HotlinePlatformFrame extends  JFrame{
                     jListNewCases = new JList<>(array);
                     JScrollPane scrollPane = new JScrollPane(jListNewCases);
                     scrollPane.setMinimumSize(new Dimension(240, 240));
-                    if (newCasesLoaded)
+                    if (newCasesLoaded) {
                         newCases.remove(0);
+                    }
                     newCasesLoaded = true;
                     newCases.add(scrollPane, BorderLayout.CENTER);
-                    newCases.updateUI();
+                    //newCases.updateUI();
+                    mainPanel.updateUI();
 
-                    if(currentState==State.SELECTED_NEW_CASE || currentState== State.SELECTED_PENDING_CASE) {
+                    if(currentState== State.EVALUATING || currentState==State.SELECTED_NEW_CASE || currentState== State.SELECTED_PENDING_CASE) {
                         jListNewCases.setEnabled(false);
                         jListNewCases.setSelectedValue(selectedEncryptedCase,true);
                     }
@@ -342,9 +357,9 @@ public class HotlinePlatformFrame extends  JFrame{
                         pendingCases.remove(0);
                     pendingCasesLoaded = true;
                     pendingCases.add(scrollPane, BorderLayout.CENTER);
-                    pendingCases.updateUI();
+                    mainPanel.updateUI();
 
-                    if(currentState==State.SELECTED_NEW_CASE || currentState== State.SELECTED_PENDING_CASE) {
+                    if(currentState==State.EVALUATING || currentState==State.SELECTED_NEW_CASE || currentState== State.SELECTED_PENDING_CASE) {
                         jListPendingCases.setEnabled(false);
                         jListPendingCases.setSelectedValue(selectedEncryptedCase,true);
                     }

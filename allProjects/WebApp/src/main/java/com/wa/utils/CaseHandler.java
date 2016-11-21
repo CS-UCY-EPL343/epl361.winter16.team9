@@ -30,6 +30,10 @@ public class CaseHandler {
         if(caseDir.exists())
             return false;
         caseDir.mkdir();
+        caseDir.setWritable(true,false);
+        caseDir.setReadable(true,false);
+        caseDir.setExecutable(true,false);
+        Runtime.getRuntime().exec("chmod 777 "+ caseDir.getAbsolutePath());
         FileOutputStream fout = new FileOutputStream(caseDir.getAbsolutePath()+"/base64-encrypted.data");
         fout.write(stream);
         fout.close();
@@ -38,6 +42,10 @@ public class CaseHandler {
             Files.copy(fileStream, foutFile);
             fileStream.close();
         }
+        File file = new File(caseDir.getAbsolutePath()+"/base64-encrypted.data");
+        file.setWritable(true,false);
+        file.setReadable(true,false);
+        file.setExecutable(true,false);
         return true;
     }
 }

@@ -11,6 +11,7 @@ import spark.Route;
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.http.Part;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.security.PrivateKey;
@@ -105,7 +106,13 @@ public class HotlineController extends Controller{
         InputStream fileStream = part.getInputStream();
 
         String caseID = UUID.randomUUID().toString();
-        boolean succeeded = caseHandler.newCase(caseID,sb.toString().getBytes("UTF-8"),fileStream,part.getSize()!=0);
+
+        boolean succeeded = false;
+        try {
+            succeeded = caseHandler.newCase(caseID, sb.toString().getBytes("UTF-8"), fileStream, part.getSize() != 0);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
         if(succeeded)
             getLogger().info("New Case: " + caseID);
 
