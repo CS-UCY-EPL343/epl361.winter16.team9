@@ -5,8 +5,12 @@ Case Management Platform and Tools  for reporting cyber crime and providing tech
 
 ___
 
-You can visit the website on : [https://31.216.88.66:8000](https://31.216.88.66:8000)
+You can visit the website on :
+
+[https://31.216.88.66:8000](https://31.216.88.66:8000)
+
 If the website is not accessible, send an email on zacharias33@gmail.com
+
 ###Description
 
 This project is divided into 5 sub projects in allprojects directory:
@@ -20,12 +24,14 @@ We've used the Gradle Build Tool in order to build our project.
 ###How to install
 1. Run the scripts for the database located in the db/scripts/ directory. The database is Mysql.
 2. If you want to build the WebApp:
-    1.Build the WebApp project using the following command from allProjects directory:
+  1. Build the WebApp project using the following command from allProjects directory:
+
       ```bash
       ./gradlew :WebApp:exportJar
       ```
-    2.Go to WebApp/build/libs and copy WebApp-x.x.jar , keys and public directory into your preferred location
+    2. Go to WebApp/build/libs and copy WebApp-x.x.jar , keys and public directory into your preferred location
     3. Execute the following command in order to start the server:
+
       ```bash
       # It runs on the default port which is 8000
       java -jar WebApp-x.x.jar
@@ -33,12 +39,14 @@ We've used the Gradle Build Tool in order to build our project.
       sudo java -jar WebApp-x.x.jar 80 ./data/
       ```
 3. If you want to build HotlinePlatform:
-    1.Build the HotlinePlatform project using the following command from allProjects directory:
+    1. Build the HotlinePlatform project using the following command from allProjects directory:
+
       ```bash
       ./gradlew :HotlinePlatform:exportJar
       ```
-    2.Go to HotlinePlatform/build/libs and copy HotlinePlatform-x.x.jar  into your preferred location
+    2. Go to HotlinePlatform/build/libs and copy HotlinePlatform-x.x.jar  into your preferred location
     3. Execute the following command in order to start the application:
+
       ```bash
       # Make sure you have the necessary database
       java -jar HotlinePlatform-x.x.jar
