@@ -86,6 +86,18 @@ public class Main {
         ChatController chatController = new ChatController(chatPath,chatTemplatePath,handlers.getLoggersHandler().getRootLogger());
         get(chatPath, chatController.getMainRoute());
 
+        //HotlineChat
+        String hotlineChatPath = ViewUtil.PATH.getWebInstance().getHOTLINECHAT();
+        String hotlineChatTemplatePath = ViewUtil.PATH.getTemplateInstance().getHOTLINECHAT();
+        HotlineChatController hotlineChatController = new HotlineChatController(hotlineChatPath,hotlineChatTemplatePath,handlers.getLoggersHandler().getRootLogger());
+        get(hotlineChatPath, hotlineChatController.getMainRoute());
+
+        //HelplineChat
+        String helplineChatPath = ViewUtil.PATH.getWebInstance().getHELPLINECHAT();
+        String helplineChatTemplatePath = ViewUtil.PATH.getTemplateInstance().getHELPLINECHAT();
+        HelplineChatController  helplineChatController = new HelplineChatController(helplineChatPath,helplineChatTemplatePath,handlers.getLoggersHandler().getRootLogger());
+        get(helplineChatPath, helplineChatController.getMainRoute());
+
         //FAQ
         String faqPath = ViewUtil.PATH.getWebInstance().getFAQ();
         String faqTemplatePath = ViewUtil.PATH.getTemplateInstance().getFAQ();

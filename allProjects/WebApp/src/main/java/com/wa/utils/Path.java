@@ -23,9 +23,9 @@ public class Path {
         private  final String HOTLINE = "/reports/hotline";
        private  final String HOTLINESUBMIT = "/reports/hotline/submit";
 
-        private  final String HELPLINE = "/helpline";
-
         private  final String CHAT = "/chat";
+        private  final String HOTLINECHAT = "/chat/hotline";
+        private  final String HELPLINECHAT = "/chat/helpline";
 
         public String getINDEX() {
             return INDEX;
@@ -51,6 +51,14 @@ public class Path {
         public String getHOTLINESUBMIT() {
             return HOTLINESUBMIT;
         }
+
+        public String getHELPLINECHAT() {
+            return HELPLINECHAT;
+        }
+
+        public String getHOTLINECHAT() {
+            return HOTLINECHAT;
+        }
     }
 
     public  class Template{
@@ -58,6 +66,8 @@ public class Path {
         private  final String REPORTS = "reports/report.ftl";
         private  final String FAQ = "/faq/faq.ftl";
         private  final String CHAT = "/chat/chat.ftl";
+        private  final String HOTLINECHAT = "/chat/hotlineChat.ftl";
+        private  final String HELPLINECHAT = "/chat/helplineChat.ftl";
 
         private  final String HOTLINE = "reports/hotlineForm.ftl";
 
@@ -97,6 +107,14 @@ public class Path {
 
         public String getFAQ() {
             return FAQ;
+        }
+
+        public String getHELPLINECHAT() {
+            return HELPLINECHAT;
+        }
+
+        public String getHOTLINECHAT() {
+            return HOTLINECHAT;
         }
     }
 

@@ -8,7 +8,7 @@
         <div class="col-lg-12">
 
             <h2 class="intro-text text-center">
-                <a href="#"> <strong>Enter the Hotline Chatroom</strong> </a>
+                <a href="#" id="hotlineChat"> <strong>Enter the Hotline Chatroom</strong> </a>
             </h2>
             <hr/>
             <p>Enter this chatroom for crimes that are related to one of the categories bellow:
@@ -27,7 +27,7 @@
         <div class="col-lg-12">
 
             <h2 class="intro-text text-center">
-                <a href="#"> <strong>Enter the Helpline Chatroom</strong> </a>
+                <a href="#" id="helplineChat"> <strong>Enter the Helpline Chatroom</strong> </a>
             </h2>
             <hr/>
             <p>Enter this chatroom for crimes that are related to one of the categories bellow:
@@ -52,4 +52,5 @@
     </div>
 </div>
 </div>
+<script src="/js/chat.js"></script>
 </@layout.masterTemplate>

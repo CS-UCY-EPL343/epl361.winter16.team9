@@ -1,6 +1,6 @@
 <#import "../masterTemplate.ftl" as layout/>
 
-<@layout.masterTemplate title="Cyber Crime Report Unit" active="index">
+<@layout.masterTemplate title="Live Chatroom" active="chat" brand="Live Chatroom" subBrand="ENTER A CHATROOM AND TALK WITH ONE OF OUR OPERATORS LIVE">
 
 <div class="container">
 <div class="row">
