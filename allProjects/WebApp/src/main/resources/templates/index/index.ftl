@@ -1,8 +1,31 @@
 <#import "../masterTemplate.ftl" as layout/>
 
-<@layout.masterTemplate title="Live Chatroom" active="chat" brand="Live Chatroom" subBrand="ENTER A CHATROOM AND TALK WITH ONE OF OUR OPERATORS LIVE">
+<@layout.masterTemplate title="Cyber Crime Report" active="index" brand="Case Management Platform and Tools" subBrand="Report Internet crimes easily and anonymously">
 
 <div class="container">
+
+<div class="row">
+
+
+    <div class ="col-xs-6 text-center">
+        <div class="box" style="background-color:#CCFF99">
+            <h1 > <strong>Helpline</strong></h1>
+            <p> Contact us with your online safety concerns</p>
+            <br/>
+            <button style="padding: 20px 50px;font-size:20px" class="btn btn-success " id="helplineReport"><big>Report</big></button>
+
+        </div>
+    </div>
+    <div class ="col-xs-6 text-center">
+        <div class="box" style="background-color:#FFBC9A">
+            <h1 > <strong>Hotline</strong></h1>
+            <p>Anonymous and safe place to report online child sexual abuse imagery and videos</p>
+            <button style="padding: 20px 50px;font-size:20px" class="btn btn-danger" id="hotlineReport"><big>Report</big></button>
+        </div>
+    </div>
+
+</div>
+
 <div class="row">
     <div class="box">
         <div class="col-lg-12">
@@ -18,6 +41,8 @@
         </div>
     </div>
 </div>
+
+
 
 <div class="row">
     <div class="box">
@@ -47,4 +72,6 @@
         <!-- /.container -->
 
 
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="/js/reports.js"></script>
 </@layout.masterTemplate>

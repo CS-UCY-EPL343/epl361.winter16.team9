@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.security.PrivateKey;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collector;
@@ -119,6 +120,8 @@ public class HotlineController extends Controller{
 
         Map model = new HashMap();
         model.put("case_id",caseID);
+        model.put("date",new SimpleDateFormat("dd/MM/yyy hh:mm").format(new Date(System.currentTimeMillis())));
+        model.put("topic",topic);
         return ViewUtil.render(request,model,"/reports/successfullSubmission.ftl");
 
     };
